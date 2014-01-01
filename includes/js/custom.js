@@ -14,31 +14,6 @@ jQuery(document).ready(function() {
         $("#responsive-menu").slideToggle(300);
     });
 
-
-    /*-----------------------------------------------------------------------------------*/
-    /*	Nano Scroller
-     /*-----------------------------------------------------------------------------------*/
-    $('.nano').nanoScroller({
-        preventPageScrolling: true
-    });
-    $(".nano").nanoScroller();
-
-    /*-----------------------------------------------------------------------------------*/
-    /*	Fixed Sidebar
-     /*-----------------------------------------------------------------------------------*/
-    $(window).scroll(function() {
-        var scrollTop = 198;
-        if ($(window).scrollTop() >= scrollTop) {
-            $('#sidebar').css({
-                position: 'fixed',
-                top: '0'
-            });
-        }
-        if ($(window).scrollTop() < scrollTop) {
-            $('#sidebar').removeAttr('style');
-        }
-    })
-
     /*-----------------------------------------------------------------------------------*/
     /*	jQuery Superfish Menu
      /*-----------------------------------------------------------------------------------*/
@@ -73,10 +48,10 @@ jQuery(document).ready(function() {
                 speed: 'fast',
                 start: undefined
             },
-            animate: true
+            animate: false
 
         });
 
-    })
+    });
 
-})
+});

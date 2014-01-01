@@ -177,6 +177,7 @@ a img {
     background:#ffffff;
     border:1px solid #e3e3e3;
     min-height: 1300px;
+    padding-top: 52px;
 }
 #content {
     background: #ffffff;
@@ -276,11 +277,15 @@ a img {
 }
 
 #nav-container, #primary-nav {
-    border-bottom: 1px solid #e3e3e3;
     height: 52px;
     position: relative;
     text-transform: uppercase;
 }
+
+#nav-container {
+    position: fixed;
+}
+
 #primary-nav .nav {
     margin: 7px 20px 0 20px;
 }
@@ -442,15 +447,72 @@ h1.entry-title {
     padding: 0 0 20px 0;
 }
 /* F E A T U R E D - C O N T E N T */
-.featured {
-    background: #000 !important;
+#featured-content {
+	margin: 0 0 1px 0;
 }
 
-#featured-content {
-    background: #FFFFFF;
-    border-bottom: 1px dotted #cccccc;
-    margin: 0 0 25px 0;
-    padding: 0 0 25px 0;
+#featured-content .featured-left {
+	width: 800px;
+	height: 480px;
+        max-width: 100% !important;
+        float: left;
+	margin: 0 0 20px 0;    
+}
+
+.featured-right {
+	float: right;
+        width: 250px;
+        height: 480px;
+}
+#featured-content ul li {
+	display: block;
+	float: left;
+	position: relative;
+}
+#featured-content .entry-title {
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+}
+#featured-content  a,
+#featured-content  a:visited {
+	color: #fff;
+}
+#featured-content .entry-date {
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-family: Tahoma;
+	font-size: 10px;
+	letter-spacing: 1px;
+	line-height: 11px;
+	margin: 0;
+	padding: 4px 6px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	text-transform: uppercase;
+}
+
+#featured-content .featured-left .entry-title {
+	font-size: 13px;
+	padding: 10px 10px;
+	width: 480px;
+}
+#featured-content .featured-right ul li {
+	margin: 0 0 10px 0;
+	height: 150px;
+}
+#featured-content .featured-right .entry-title {
+	font-size: 12px;
+	padding: 5px 10px;
+	text-align: center;
 }
 
 .featured-flag {
@@ -475,54 +537,6 @@ h1.entry-title {
     position: absolute;
 }
 
-.featured-left {
-    float: left;
-    width: 800px;
-}
-.featured-left .entry-title a {
-    display: block;
-    font-size: 1.4em;
-    line-height: 1.25em;
-    margin: 0 0 15px 0;
-}
-.featured-left .entry-thumb {
-    height: auto;
-    margin: 0 0 20px 0;
-    width: 100%;
-}
-.featured-right {
-    float: right;
-    width: 205px;
-}
-.featured-right .entry-title a,
-.featured-right .entry-title a:visited {
-    color: #444444;
-}
-.featured-right .entry-excerpt {
-    overflow: hidden
-}
-.featured-right .entry-title {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-.featured-right .entry-thumb {
-    margin: 0 0 15px 0;
-    width: 100%;
-    height: auto !important;
-}
-.featured-right .entry-meta {
-    margin-bottom: 10px;
-}
-.featured-post {
-    border-bottom: 1px dotted #cccccc;
-    margin: 0 0 15px 0;
-    padding: 0 0 5px 0;
-}
-.featured-post-last {
-    border-bottom: none;
-    margin: 0;
-    padding: 0;
-}
 /* 2.5 Sidebar */
 #sidebar {
     background: #f0f0f0;
