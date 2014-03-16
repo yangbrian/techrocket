@@ -7,4 +7,6 @@ if (function_exists('add_theme_support')) {
     add_image_size('entry-thumb', 250, 150, true);
     
     add_image_size( 'featured-thumb', 860, 480, true );
+
+    //add_image_size( 'featured-thumb-small', 250, 150, true);
 }

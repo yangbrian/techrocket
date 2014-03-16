@@ -31,7 +31,7 @@
                 <?php
                 $counter = 1;
                 query_posts( array(
-                    'showposts' => 4,
+                    'showposts' => 3,
                     'offset' => 1,
                     'tag' => 'featured',
                 ) );
@@ -40,7 +40,7 @@
                 
                     <li class="featured-<?php echo $counter; ?>">
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
-                            <?php the_post_thumbnail('featured-thumb-small', array('class' => 'entry-thumb')); ?>
+                            <?php the_post_thumbnail('entry-thumb', array('class' => 'entry-thumb')); ?>
                         </a>
                         <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
                     </li>
