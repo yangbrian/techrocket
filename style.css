@@ -284,6 +284,7 @@ a img {
 
 #nav-container {
     position: fixed;
+    z-index: 11;
 }
 
 #primary-nav .nav {
@@ -448,7 +449,7 @@ h1.entry-title {
 }
 /* F E A T U R E D - C O N T E N T */
 #featured-content {
-    margin: 0 0 1px 0;
+    margin: 0 0 15px 0;
 }
 
 #featured-content .featured-left {
@@ -518,7 +519,6 @@ h1.entry-title {
 
 .featured-flag {
     font-size: 13px;
-    text-transform: uppercase;
     font-weight: 600;
     background-color: #7fb626;
     color: #ffffff;
@@ -526,6 +526,7 @@ h1.entry-title {
     top: 26px;
     padding: 6px 6px;
     position: relative;
+    z-index: 10;
 }
 
 .featured-flag:after {
