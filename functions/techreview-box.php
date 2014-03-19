@@ -28,7 +28,7 @@ function techrev_review_box($post_id) {
 		                <h3>The Good</h3>
 		                <ul>';
 
-	    			if ($tech_rev['pro1'])
+	    		if ($tech_rev['pro1'])
 	            		echo '<li>' . $tech_rev['pro1'] . '</li>';
 
 	                if ($tech_rev['pro2'])
@@ -45,7 +45,7 @@ function techrev_review_box($post_id) {
 
 		            <ul>';
 		            
-		            if ($tech_rev['con1'])
+		        if ($tech_rev['con1'])
 		            	echo '<li>' . $tech_rev['con1'] . '</li>';
 	             
 	                if ($tech_rev['con2'])
@@ -59,27 +59,27 @@ function techrev_review_box($post_id) {
 	            
 	                if ($tech_rev['revfin']) {
 
-	                	echo '
-			            <div id="prodcon">    <!-- Product Final Verdict -->
-			                <h3>Bottom Line</h3>
-			                <p>' . $tech_rev['revfin'] . '</p>
-			            </div>';
+                        	echo '
+        		            <div id="prodcon">    <!-- Product Final Verdict -->
+        		                <h3>Bottom Line</h3>
+        		                <p>' . $tech_rev['revfin'] . '</p>
+        		            </div>';
 			            
 	                }
 
-	            echo '
-		            <div id="rating">    <!-- Product Rating -->
-		                <span class="rate">Rating:</span>
-		                <div class="review-stars rate' . $tech_rev['rate'] . '">
-		                    <span class="rating">' . $tech_rev['rate'] . '</span>
-		                </div>
-		            </div>';
+	                echo '
+        	            <div id="rating">    <!-- Product Rating -->
+        	                <span class="rate">Rating:</span>
+        	                <div class="review-stars rate' . $tech_rev['rate'] . '">
+        	                    <span class="rating">' . $tech_rev['rate'] . '</span>
+        	                </div>
+        	            </div>';
 	            
 	                if ($tech_rev['img']) {
-			            echo '
-			            <div id="prodimg">    <!-- Product Image -->
-			                <img src="' . $tech_rev['img'] . '" alt="Review of ' . $tech_rev['name'] . '" title="Review of ' . $tech_rev['name'] . '" width="270" height="140" />
-			            </div>';
+		            echo '
+		            <div id="prodimg">    <!-- Product Image -->
+		                <img src="' . $tech_rev['img'] . '" alt="Review of ' . $tech_rev['name'] . '" title="Review of ' . $tech_rev['name'] . '" width="270" height="140" />
+		            </div>';
 
 	                }
 	         echo '   
