@@ -65,10 +65,8 @@
 
     <div id="nav-container" class="full-width">
         <nav id="primary-nav" class="container">
-
-            <div class="left">
-
-                <h1 class="logo"><a href="<?php echo home_url(); ?>">TechAirlines</a></h1>
+            <h1 class="logo"><a href="<?php echo home_url(); ?>">TechAirlines</a></h1>
+            <div class="left">               
 
                 <?php
                 $menuClass = 'nav';
@@ -92,7 +90,7 @@
                     <ul class="nav">                  
                         <li class="menu-category"><a href="#"><i class="icon-align-justify"></i> Categories</a>
                             <ul>
-                                <?php show_categories_menu($menuClass, false, false); ?>
+                                <?php //show_categories_menu($menuClass, false, false); ?>
                             </ul>
                         </li>
                         <li class="menu-follow"><a href="#"><i class="icon-twitter"></i> Follow</a>

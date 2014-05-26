@@ -178,28 +178,6 @@ function show_categories_menu($customClass = 'nav clearfix', $addUlContainer = t
 
 ;
 
-function head_addons() {
-    global $shortname, $default_colorscheme;
-
-    if (get_option($shortname . '_color_scheme') <> $default_colorscheme) {
-        ?>
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style-<?php echo(get_option($shortname . '_color_scheme')); ?>.css" type="text/css" media="screen" />
-        <?php
-    };
-
-    if (get_option($shortname . '_child_css') == 'on') { //Enable child stylesheet  
-        ?>
-        <link rel="stylesheet" href="<?php echo(get_option($shortname . '_child_cssurl')); ?>" type="text/css" media="screen" />
-        <?php
-    };
-
-    if (get_option($shortname . '_custom_colors') == 'on')
-        custom_colors_css();
-}
-
-; // end function head_addons()
-add_action('wp_head', 'head_addons', 7);
-
 function integration_head() {
     global $shortname;
     if (get_option($shortname . '_integration_head') <> '' && get_option($shortname . '_integrate_header_enable') == 'on')

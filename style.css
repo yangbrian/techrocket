@@ -31,6 +31,7 @@ TABLE OF CONTENTS:
 -3.3 Pagination
 -3.4 Author Box
 -3.5 Entry Bottom
+-3.6 Review Box
 
 4. Widgets
 -4.1 Generic Widgets
@@ -185,6 +186,11 @@ a img {
     min-height: 1200px;
     padding: 25px 35px;
 }
+
+.content-loop {
+    margin-top: 25px;
+}
+
 /* 2.2 Navigation Menu */
 .nav {
     list-style: none;
@@ -797,7 +803,6 @@ blockquote {
     list-style: lower-alpha;
 }
 .entry-content ol li {
-    font-size: 12px;
     margin: 5px 0;
 }
 .entry-content p {
@@ -909,6 +914,25 @@ img.alignleft {
 }
 
 /* 3.5 Entry Bottom */
+/* 3.6 Review Box */
+.revsc {
+    float: right;
+    width: 300px;
+    padding: 5px 15px 15px;
+    margin: 0px 0px 0px 10px;
+    background-color: #7fb626;
+    border-radius: 20px;
+    border-color: #3EA623;
+}
+
+.revsc-content {
+    color: #333;
+}
+
+.revsc-content h2, .revsc-content h3 {
+    color: #000;
+}
+
 /* =4. Widgets
 --------------------------------------------------------------------------------- */
 /* 4.1 General Widgets */
