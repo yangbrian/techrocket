@@ -2,6 +2,13 @@
 
 <div id="content" class="one-col">
 
+    <div id="breadcrumbs">
+        <?php if(function_exists('bcn_display'))
+        {
+            bcn_display();
+        }?>
+    </div>
+
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
             <h1 class="page-title"><?php the_title(); ?></h1>

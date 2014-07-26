@@ -39,6 +39,8 @@ function my_deregister_scripts() {
     //wp_enqueue_script('jquery-infinitescroll', get_template_directory_uri() . '/includes/js/jquery.infinitescroll.js', false, '2.0');
     wp_enqueue_script('jquery-superfish', get_template_directory_uri() . '/includes/js/superfish.min.js', false, '1.7.4');
     wp_enqueue_script('jquery-custom', get_template_directory_uri() . '/includes/js/custom.js', false, '1.0');
+    //wp_enqueue_script('modernizr', get_template_directory_uri() . '/includes/js/modernizr.min.js', false, '2.8.3');
+    //wp_enqueue_script('page-loader', get_template_directory_uri() . '/includes/js/page-loader.js', false, '0.1');
 
     if (is_singular() && get_option('thread_comments'))
         wp_enqueue_script('comment-reply');

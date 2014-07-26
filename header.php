@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" lang="en">
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
 <html lang="en">
-<!--<![endif]-->
 <!--
   _______        _              _      _ _                
  |__   __|      | |       /\   (_)    | (_)               
@@ -26,7 +18,6 @@
     <link rel="publisher" href="https://plus.google.com/115584030451420995590/" />
     
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css" />
 
     <link rel="alternate" type="application/rss+xml" title="TechAirlines RSS Feed" href="http://www.techairlines.com/feed/" />
@@ -36,10 +27,12 @@
     <meta name="robots" content="noindex,follow" />
     <?php } ?>
 
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <?php if(is_single() ) { ?>
     <meta property="og:site_name" content="TechAirlines"/>
+    <meta property="article:publisher" content="http://www.facebook.com/techairlines" />
     <meta property="og:title" content="<?php the_title_attribute(); ?>" />
-    <meta property="fb:app_id" content="269872793048549" />
     <meta property="og:url" content="<?php the_permalink(); ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="<?php
@@ -58,6 +51,18 @@
             <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>	
     <![endif]-->
     <?php wp_head(); ?>
+
+    <!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- jQuery ScrollTo Plugin -->
+<script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
+
+<!-- History.js -->
+<script src="//browserstate.github.io/history.js/scripts/bundled/html5/jquery.history.js"></script>
+
+<!-- Ajaxify -->
+<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
 </head>
 
@@ -90,7 +95,7 @@
                     <ul class="nav">                  
                         <li class="menu-category"><a href="#"><i class="icon-align-justify"></i> Categories</a>
                             <ul>
-                                <?php //show_categories_menu($menuClass, false, false); ?>
+                                
                             </ul>
                         </li>
                         <li class="menu-follow"><a href="#"><i class="icon-twitter"></i> Follow</a>
