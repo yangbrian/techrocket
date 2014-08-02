@@ -1,0 +1,14 @@
+/*   
+TechAirlines WordPress Editor Styles
+*/
+
+body#tinymce.wp-editor { 
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+    margin: 10px; 
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+body#tinymce.wp-editor a {
+    color: #7fb626;
+}

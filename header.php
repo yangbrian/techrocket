@@ -11,7 +11,7 @@
 -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="http://www.techairlines.com/xmlrpc.php" />
@@ -26,8 +26,6 @@
     <?php if (is_attachment()) { ?>
     <meta name="robots" content="noindex,follow" />
     <?php } ?>
-
-    <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <?php if(is_single() ) { ?>
     <meta property="og:site_name" content="TechAirlines"/>
@@ -52,25 +50,15 @@
     <![endif]-->
     <?php wp_head(); ?>
 
-    <!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<!-- jQuery ScrollTo Plugin -->
-<script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
-
-<!-- History.js -->
-<script src="//browserstate.github.io/history.js/scripts/bundled/html5/jquery.history.js"></script>
-
-<!-- Ajaxify -->
-<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
-
 </head>
 
 <body <?php body_class(); ?>>  
 
-    <div id="nav-container" class="full-width">
+    <header id="nav-container" class="full-width">
         <nav id="primary-nav" class="container">
-            <h1 class="logo"><a href="<?php echo home_url(); ?>">TechAirlines</a></h1>
+            <div role="branding" itemscope="" itemtype="http://schema.org/Organization">
+                <h1 class="logo"><a href="<?php echo home_url(); ?>"><img itemprop="logo" src="http://localhost/wordpress/wp-content/themes/techrocket/images/logo.png" alt="TechAirlines" title="TechAirlines" /></a></h1>
+            </div>
             <div class="left">               
 
                 <?php
@@ -78,7 +66,7 @@
                 $menuID = 'primary-navigation';
                 $primaryNav = '';
                 if (function_exists('wp_nav_menu')) {
-                    $primaryNav = wp_nav_menu(array('theme_location' => 'primary-nav', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => $menuID, 'echo' => false));
+                    $primaryNav = wp_nav_menu(array('theme_location' => 'cat-nav', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => $menuID, 'echo' => false));
                 }
                 if ($primaryNav == '') {
                     ?>
@@ -93,10 +81,14 @@
 
                 <div class="right">
                     <ul class="nav">                  
-                        <li class="menu-category"><a href="#"><i class="icon-align-justify"></i> Categories</a>
-                            <ul>
-                                
-                            </ul>
+                        <li class="menu-about"><a href="#"><i class="icon-align-justify"></i> About</a>
+                            <?php
+                                $menuClass = 'about-nav';
+                                $menuID = 'about-nav';
+                                if (function_exists('wp_nav_menu')) {
+                                    echo wp_nav_menu(array('theme_location' => 'primary-nav', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => $menuID, 'echo' => false));
+                                } 
+                            ?>
                         </li>
                         <li class="menu-follow"><a href="#"><i class="icon-twitter"></i> Follow</a>
                             <ul>
@@ -122,7 +114,7 @@
                 <div class="clear"></div>
 
             </nav><!-- #primary-nav -->
-    </div>
+    </header>
         
         <nav id="mobile-menu">
             <?php

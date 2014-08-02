@@ -14,44 +14,42 @@ jQuery(document).ready(function() {
         $("#responsive-menu").slideToggle(300);
     });
 
-    /*-----------------------------------------------------------------------------------*/
-    /*	jQuery Superfish Menu
-     /*-----------------------------------------------------------------------------------*/
 
-    function init_nav() {
-        jQuery('ul.nav').superfish({
-            delay: 10, // one second delay on mouse out 
-            animation: {opacity: 'show', height: 'show'}, // fade-in and slide-down animation 
-            speed: 'fast'                           // faster animation speed 
-        });
-    }
-    init_nav();
-    
-    /*-----------------------------------------------------------------------------------*/
-    /*	Infinite Scroll
-     /*-----------------------------------------------------------------------------------*/
-    jQuery(document).ready(function() {
-
-        $('.content-loop').infinitescroll({
-            navSelector: "div.rocket-pagination",
-            // selector for the paged navigation (it will be hidden)
-            nextSelector: "div.rocket-pagination a.next",
-            // selector for the NEXT link (to page 2)
-            itemSelector: ".content-loop article",
-            // selector for all items you'll retrieve
-            loading: {
-                finished: undefined,
-                finishedMsg: "<em>Congratulations, you've reached the end of the internet.</em>",
-                msg: null,
-                msgText: "<em>Loading...</em>",
-                selector: null,
-                speed: 'fast',
-                start: undefined
-            },
-            animate: false
-
-        });
-
-    });
-
+    $('#twitter').sharrre({
+  share: {
+    twitter: true
+  },
+  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Tweet</div></a>',
+  enableHover: false,
+  enableTracking: true,
+  buttons: { twitter: {via: '_JulienH'}},
+  click: function(api, options){
+    api.simulateClick();
+    api.openPopup('twitter');
+  }
+});
+$('#facebook').sharrre({
+  share: {
+    facebook: true
+  },
+  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Like</div></a>',
+  enableHover: false,
+  enableTracking: true,
+  click: function(api, options){
+    api.simulateClick();
+    api.openPopup('facebook');
+  }
+});
+$('#googleplus').sharrre({
+  share: {
+    googlePlus: true
+  },
+  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Google+</div></a>',
+  enableHover: false,
+  enableTracking: true,
+  click: function(api, options){
+    api.simulateClick();
+    api.openPopup('googlePlus');
+  }
+});
 });
