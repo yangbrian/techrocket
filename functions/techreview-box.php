@@ -11,7 +11,7 @@
 function techrev_review_box($post_id) {
     $tech_rev = get_post_meta( $post_id, '_tech_rev', true);
 
-    if (!empty($tech_rev)) {
+    if (!empty($tech_rev['name'])) {
 
 	    echo '
 		    <div class="revsc">    <!-- Start Scorecard Content Div -->

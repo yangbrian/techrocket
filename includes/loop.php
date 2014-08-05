@@ -10,7 +10,7 @@
 
     <div class="entry-excerpt">
         <?php the_excerpt(); ?>
-        <a href="<?php the_permalink(); ?>" class="read-more">Read more &rarr;</a>                
+        <div class="meta"><span class="continue"> Continue <a href="<?php the_permalink() ?>" rel="bookmark" title="Continue reading <?php the_title_attribute(); ?>"><?php the_title_attribute(); ?></a> </span></div>                
     </div><!-- .entry-excerpt -->
 
     <div class="clear"></div>

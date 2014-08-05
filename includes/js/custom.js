@@ -14,42 +14,11 @@ jQuery(document).ready(function() {
         $("#responsive-menu").slideToggle(300);
     });
 
+    $('.share a').on('click', function(){
+        console.log("Hey");
+        newwindow=window.open($(this).attr('href'),'','height=400,width=650');
+        if (window.focus) {newwindow.focus()}
+        return false;
+    });
 
-    $('#twitter').sharrre({
-  share: {
-    twitter: true
-  },
-  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Tweet</div></a>',
-  enableHover: false,
-  enableTracking: true,
-  buttons: { twitter: {via: '_JulienH'}},
-  click: function(api, options){
-    api.simulateClick();
-    api.openPopup('twitter');
-  }
-});
-$('#facebook').sharrre({
-  share: {
-    facebook: true
-  },
-  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Like</div></a>',
-  enableHover: false,
-  enableTracking: true,
-  click: function(api, options){
-    api.simulateClick();
-    api.openPopup('facebook');
-  }
-});
-$('#googleplus').sharrre({
-  share: {
-    googlePlus: true
-  },
-  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Google+</div></a>',
-  enableHover: false,
-  enableTracking: true,
-  click: function(api, options){
-    api.simulateClick();
-    api.openPopup('googlePlus');
-  }
-});
 });

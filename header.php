@@ -18,7 +18,7 @@
     <link rel="publisher" href="https://plus.google.com/115584030451420995590/" />
     
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/icons.css" />
 
     <link rel="alternate" type="application/rss+xml" title="TechAirlines RSS Feed" href="http://www.techairlines.com/feed/" />
     <link rel="alternate" type="application/atom+xml" title="TechAirlines Atom Feed" href="http://www.techairlines.com/feed/atom/" />
@@ -57,7 +57,11 @@
     <header id="nav-container" class="full-width">
         <nav id="primary-nav" class="container">
             <div role="branding" itemscope="" itemtype="http://schema.org/Organization">
-                <h1 class="logo"><a href="<?php echo home_url(); ?>"><img itemprop="logo" src="http://localhost/wordpress/wp-content/themes/techrocket/images/logo.png" alt="TechAirlines" title="TechAirlines" /></a></h1>
+            <?php if ( is_home()  ) { ?>
+                <h1 class="logo"><a href="<?php echo home_url(); ?>" rel="home"><img itemprop="logo" src="http://localhost/wordpress/wp-content/themes/techrocket/images/logo.png" alt="TechAirlines" title="TechAirlines" /></a></h1>
+            <?php } else { ?>
+                <h4 class="logo"><a href="<?php echo home_url(); ?>" rel="home"><img itemprop="logo" src="http://localhost/wordpress/wp-content/themes/techrocket/images/logo.png" alt="TechAirlines" title="TechAirlines" /></a></h4>
+            <?php } ?>
             </div>
             <div class="left">               
 
@@ -81,7 +85,7 @@
 
                 <div class="right">
                     <ul class="nav">                  
-                        <li class="menu-about"><a href="#"><i class="icon-align-justify"></i> About</a>
+                        <li class="menu-about"><a href="#"><i class="icon-menu"></i> About</a>
                             <?php
                                 $menuClass = 'about-nav';
                                 $menuID = 'about-nav';
@@ -92,11 +96,11 @@
                         </li>
                         <li class="menu-follow"><a href="#"><i class="icon-twitter"></i> Follow</a>
                             <ul>
-                                <li><a href="<?php echo get_option('techrocket_twitter_url'); ?>"><i class="icon-twitter-sign"></i> Follow on Twitter</a></li>
-                                <li><a href="<?php echo get_option('techrocket_facebook_url'); ?>"><i class="icon-facebook-sign"></i> Become our fan</a></li>
-                                <li><a href="<?php echo get_option('techrocket_google_plus_url'); ?>"><i class="icon-google-plus-sign"></i> Join our circle</a></li>	                		          
-                                <li><a href="<?php echo get_option('techrocket_newsletter_url'); ?>"><i class="icon-envelope-alt"></i> Join our newsletter</a></li>   
-                                <li><a href="<?php echo get_option('techrocket_rss_url'); ?>"><i class="icon-rss-sign"></i> Subscribe to RSS</a></li>          		         		             
+                                <li><a href="http://twitter.com/TechAirlines"><i class="icon-twitter"></i> Follow on Twitter</a></li>
+                                <li><a href="http://www.facebook.com/techairlines"><i class="icon-facebook"></i> Become our fan</a></li>
+                                <li><a href="http://plus.google.com/+TechAirlines"><i class="icon-googleplus"></i> Join our circle</a></li>	                		          
+                                <!--<li><a href="<?php echo get_option('techrocket_newsletter_url'); ?>"><i class="icon-mail"></i> Join our newsletter</a></li>-->   
+                                <li><a href="http://feeds.techairlines.com/TechAirlines"><i class="icon-feed"></i> Subscribe to RSS</a></li>          		         		             
                             </ul>
                         </li>
                         <li class="menu-search"><a href="#"><i class="icon-search"></i> Search</a>
@@ -108,7 +112,7 @@
                 </div><!-- .right -->
 
                 <div class="btn-nav-left">
-                    Menu <i class="btn-nav-icon icon-caret-down"></i> 
+                    <i class="btn-nav-icon icon-menu2"></i> Categories
                 </div><!-- .btn-nav-left -->	
 
                 <div class="clear"></div>
@@ -122,7 +126,7 @@
             $menuID = 'responsive-menu';
             $res_menu = '';
             $response_menu_args = array(
-                'theme_location' => 'primary-nav',
+                'theme_location' => 'cat-nav',
                 'container' => '',
                 'fallback_cb' => '',
                 'menu_class' => $menuClass,

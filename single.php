@@ -21,16 +21,40 @@
 
                 <div itemprop="articleBody text" class="entry-content">
 
+                    <?php if ( has_tag(809)) { // Guest Post ?>
+                        <div class="alert" id="guest-post">
+                            
+                                <p>This is a <a href="http://www.techairlines.com/write/">guest post</a> by <?php the_author(); ?>.</p>
+                            
+                        </div>
+                    <?php } // End Guest Post ?>
+
                     <?php techrev_review_box(get_the_ID()); ?>
                     <?php if (get_option('techrocket_integrate_singletop_enable') == 'on') echo (get_option('techrocket_integration_single_top')); ?>
 
                     <?php the_content(''); ?>
 
-                    <?php wp_link_pages(array('before' => '<div class="page-link">' . 'Pages:', 'after' => '</div>')); ?>
+                    <div class="clearfix post-bottom">
+                        <?php related_posts(); ?>
 
-                    <div class="entry-meta">
-                        
-                    </div><!-- .entry-meta -->
+                        <div id="post-share">
+                            <p>Liked this article? Share it with your friends. </p>
+                            <div class="share-buttons">
+                                <div id="twitter" class="share"><a href="http://twitter.com/share?url=<?php the_permalink();?>&amp;via=TechAirlines&amp;text=<?php the_title();?>"><i class="icon-twitter"></i> Tweet</a></div>
+                                <div id="facebook" class="share"><a href="http://www.facebook.com/share.php?u=<?php the_permalink();?>"><i class="icon-facebook"></i> Share</a></div>
+                                <div id="googleplus" class="share"><a href="https://plus.google.com/share?url=<?php the_permalink();?>"><i class="icon-googleplus"></i> Share</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="authorbox clearfix">
+                        <div id="auth-img"><?php echo get_avatar( get_the_author_meta('email'), '64'); ?></div>
+                        <p class="auth-bio"><strong>By <?php the_author_posts_link(); ?></strong><br />
+                        <?php the_author_meta( 'description' ); ?></p>
+                    </div>
+
+
+                    <?php wp_link_pages(array('before' => '<div class="page-link">' . 'Pages:', 'after' => '</div>')); ?>
 
                     <?php if (get_option('techrocket_integrate_singlebottom_enable') == 'on') echo (get_option('techrocket_integration_single_bottom')); ?>							
 

@@ -28,9 +28,8 @@ if (function_exists('register_nav_menus'))
 /* ----------------------------------------------------------------------------------- */
 /* 	Register and deregister Scripts files	
   /*----------------------------------------------------------------------------------- */
-if (!is_admin()) {
+if (!is_admin())
     add_action('wp_print_scripts', 'my_deregister_scripts', 100);
-}
 
 function my_deregister_scripts() {
     wp_deregister_script('jquery');
@@ -38,7 +37,6 @@ function my_deregister_scripts() {
     wp_enqueue_script('jquery-scrollto', get_template_directory_uri() . '/includes/js/jquery.scrollto.js', array( 'jquery' ), null);
     wp_enqueue_script('history', get_template_directory_uri() . '/includes/js/jquery.history.js', array( 'jquery' ), null);
     wp_enqueue_script('ajaxify', get_template_directory_uri() . '/includes/js/ajaxify-html5.js', array( 'jquery' ), null);
-    wp_enqueue_script('sharrre', get_template_directory_uri() . '/includes/share/jquery.sharrre-1.3.4.min.js', array( 'jquery' ), null);
     //wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/includes/js/jquery-ui-1.10.3.custom.min', false, '1.10.3');
     //wp_enqueue_script('jquery-nanoscroller', get_template_directory_uri() . '/includes/js/jquery.nanoscroller.min.js', false, '0.7.6');
     //wp_enqueue_script('jquery-infinitescroll', get_template_directory_uri() . '/includes/js/jquery.infinitescroll.js', false, '2.0');
@@ -46,10 +44,22 @@ function my_deregister_scripts() {
     wp_enqueue_script('jquery-custom', get_template_directory_uri() . '/includes/js/custom.js', false, '1.0');
     //wp_enqueue_script('modernizr', get_template_directory_uri() . '/includes/js/modernizr.min.js', false, '2.8.3');
     //wp_enqueue_script('page-loader', get_template_directory_uri() . '/includes/js/page-loader.js', false, '0.1');
+    wp_dequeue_style('yarppWidgetCss');
 
     if (is_singular() && get_option('thread_comments'))
         wp_enqueue_script('comment-reply');
 }
+
+function remove_header_styles() {
+    wp_dequeue_style('yarppWidgetCss');
+}
+add_action('wp_print_styles','remove_header_styles');
+
+function remove_footer_assets() {
+    wp_dequeue_style('yarppRelatedCss');
+    wp_dequeue_style('yarpp-thumbnails-yarpp-thumbnail');
+}
+add_action( 'get_footer', 'remove_footer_assets' );
 
 /* ----------------------------------------------------------------------------------- */
 /* 	Remove Image Caption from Index/Archive/Search Page
@@ -176,4 +186,26 @@ if (!function_exists('tr_comment')) {
         add_editor_style( $font_url );
     }
     add_action( 'after_setup_theme', 'techairlines_editor_style' );
+
+    function tpf_twitter_field( $contactmethods ) {
+        $contactmethods['twitter'] = 'Twitter (username only)';
+        return $contactmethods;
+    }
+        
+    add_filter( 'user_contactmethods', 'tpf_twitter_field' );
+
+
+    function tpf_gplus_field( $contactmethods ) {
+        $contactmethods['gplus'] = 'Google+ (ID number only)';
+        return $contactmethods;
+    }
+        
+    add_filter( 'user_contactmethods', 'tpf_gplus_field' );
+
+    function tpf_fb_field( $contactmethods ) {
+        $contactmethods['fb'] = 'Facebook (username only)';
+        return $contactmethods;
+    }
+        
+    add_filter( 'user_contactmethods', 'tpf_fb_field' );
 ?>

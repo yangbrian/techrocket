@@ -2,7 +2,12 @@
 
 <div id="content" class="one-col">
 
-    <?php get_template_part('includes/breadcrumbs'); ?>
+    <div id="breadcrumbs" itemprop="breadcrumb">
+        <?php if(function_exists('bcn_display'))
+        {
+            bcn_display();
+        }?>
+    </div>
 
     <div class="content-loop">
 

@@ -8,6 +8,7 @@
 
     <div class="aboutbox">
         <p>If you're reviewing a product, please fill out all fields in this box. This will show up in the review at a glance box on the sidebar. Leave all fields blank if this is not a review.</p>
+   
     </div>
     <div class="aboutprod">
         <label>Product Type</label>

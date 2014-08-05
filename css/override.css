@@ -1,0 +1,11 @@
+/* Plugin Override CSS */
+.yarpp-related {
+	float:left;
+	height: 250px;
+}
+.yarpp-thumbnails-horizontal .yarpp-thumbnail {
+	margin-right: 10px;
+}
+.yarpp-related .yarpp-thumbnail-title {
+	font-weight: normal !important;
+}
